@@ -9,6 +9,10 @@ The dependencies for requests library must be installed before running this app.
 ## Usage
 Entering any amount of pokemon names or ids into the script will display the Pokemon with the best type advantage, or, in the case of a tie, a Pokemon with the best base stats.
 
+To see help menu, enter the command below:
+
+    python pokeapp.py -h
+
 ### Example Input #1
     python pokeapp.py charmander squirtle
 
