@@ -23,7 +23,7 @@ class Pokemon:
 		damageRelations: the damage relations
 		according to other types
 		baseStats: the base stats of the Pokemon
-    """
+	"""
 	def __init__(self, 
 				 name,
 				 types,
@@ -37,13 +37,13 @@ class Pokemon:
 	def getName(self):
 	"""
 	A function that returns the name of the Pokemon.
-    """
+	"""
 		return self.__name
 
 	def getTypes(self):
 	"""
 	A function that returns the types of the Pokemon.
-    """
+	"""
 		return self.__types
 
 	def getDamageRelations(self):
@@ -56,7 +56,7 @@ class Pokemon:
 	"""
 	A private function that returns the types that fall under a
 	particular damage relation for this Pokemon.
-    """	
+	"""	
 		types = []
 		for damageRelation in self.__damageRelations:
 			for type in damageRelation[damageRelationKey]:
@@ -67,21 +67,21 @@ class Pokemon:
 	"""
 	A function that returns types of a damage relation that the
 	Pokemon does double damage.
-    """	
+	"""	
 		return self.__getTypesFromDamageRelation("double_damage_to")
 	
 	def getHalfDamageFromTypes(self):
 	"""
 	A function that returns types of a damage relation that the
 	Pokemon takes half damage from.
-    """	
+	"""	
 		return self.__getTypesFromDamageRelation("half_damage_from")
 	
 	def getNoDamageFromTypes(self):
 	"""
 	A function that returns types of a damage relation that the
 	Pokemon takes no damage from.
-    """	
+	"""	
 		return self.__getTypesFromDamageRelation("no_damage_from")
 	
 	def getBaseStats(self):

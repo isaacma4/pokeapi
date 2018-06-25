@@ -29,14 +29,14 @@ HalfDamageFromAdvantagePoints = 1
 NoDamageDoneFromAdvantagePoints = 2
 
 def getFavouredPokemonBasedOnStats(pokemonList):
-    """
+	"""
 	Gets the strongest Pokemon based on based
 	stats in the list of Pokemon.
 	
 	Inputs: list of Pokemon
 	
 	Outputs: the Pokemon with the best base stats
-    """
+	"""
 	totalStatsList = [0]*len(pokemonList)
 	for i in range(len(totalStatsList)):
 		for stat in pokemonList[i].getBaseStats():
@@ -47,8 +47,7 @@ def getFavouredPokemonBasedOnStats(pokemonList):
 			return pokemonList[i].getName()
 
 def getAdvantagePointsBasedOnDamageRelation(types,
-											pokemonToCmp,
-											points):
+	pokemonToCmp, points):
 	"""
 	Gets the total amount of advantage points to be
 	added, comparing the types of one Pokemon to 
@@ -57,7 +56,7 @@ def getAdvantagePointsBasedOnDamageRelation(types,
 	Inputs: list of Pokemon
 	
 	Outputs: the Pokemon with the best base stats
-    """
+	"""
 	totalPoints = 0
 	for type in types:
 		if type in pokemonToCmp.getTypes():
@@ -83,7 +82,7 @@ def getDamageRelationsForTypes(types):
 	
 	Outputs: a list of damage relations for all
 	types given
-    """
+	"""
 	damageRelations = []
 	for type in types:
 		response = requests.post(PokeAPI + "type/" + \
@@ -105,7 +104,7 @@ def getFavouredPokemonBasedOnType(pokemonList):
 	
 	Outputs: one or more Pokemon with the best type 
 	advantages
-    """
+	"""
 	totalAdvantagesList = [0]*len(pokemonList)
 	for i in range(len(totalAdvantagesList)):
 		for j in range (len(totalAdvantagesList)):
@@ -142,7 +141,7 @@ def parseBaseStats(statsJson):
 	values for a Pokemon
 	
 	Outputs: a dictionary matching stat name to value
-    """
+	"""
 	stats = []
 	for item in statsJson:
 		stats.append({'name': item["stat"]["name"],
@@ -159,7 +158,7 @@ def parseTypes(typesJson):
 	
 	Outputs: a list of type names associated with
 	a Pokemon
-    """
+	"""
 	types = []
 	for item in typesJson:
 		types.append(item["type"]["name"])
